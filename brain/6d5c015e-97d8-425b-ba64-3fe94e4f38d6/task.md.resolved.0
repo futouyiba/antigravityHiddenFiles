@@ -1,0 +1,8 @@
+# Task: Migrate away from GitHub LFS
+
+- [/] Research current LFS usage and size <!-- id: 0 -->
+- [ ] Propose migration plan to user <!-- id: 1 -->
+- [ ] Backup current repository <!-- id: 2 -->
+- [ ] Execute migration (e.g., git lfs migrate export) <!-- id: 3 -->
+- [ ] Verify content integrity <!-- id: 4 -->
+- [ ] Update GitHub repository (purge LFS) <!-- id: 5 -->

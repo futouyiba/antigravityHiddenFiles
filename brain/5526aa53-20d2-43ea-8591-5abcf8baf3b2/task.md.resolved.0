@@ -1,0 +1,5 @@
+# Task: Install and Configure unity-mcp
+
+- [/] Check environment for uv installation <!-- id: 0 -->
+- [ ] Install uv if missing <!-- id: 1 -->
+- [ ] Verify installation <!-- id: 2 -->

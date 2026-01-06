@@ -1,0 +1,11 @@
+# Task: Troubleshooting uv Package Installation
+
+- [x] Investigate "System cannot open device or file" error <!-- id: 7 -->
+    - [x] Clean uv cache <!-- id: 7.1 -->
+    - [x] Attempt manual installation of cyclopts <!-- id: 7.2 -->
+    - [x] Test --link-mode=copy (Success) <!-- id: 7.3 -->
+- [x] Apply Fix: Set UV_LINK_MODE=copy (Env Var) <!-- id: 8 -->
+- [/] Apply Robust Fix: Create uv.toml <!-- id: 9 -->
+    - [x] Create %APPDATA%/uv directory <!-- id: 9.1 -->
+    - [x] Write uv.toml with link-mode="copy" <!-- id: 9.2 -->
+    - [x] Verify fix with uvx command <!-- id: 9.3 -->

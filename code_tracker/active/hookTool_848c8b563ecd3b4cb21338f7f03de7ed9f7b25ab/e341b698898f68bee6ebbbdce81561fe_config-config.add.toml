@@ -1,0 +1,12 @@
+í[tables.hook_tool_param]
+workbook = "toolDesign.xlsx"
+sheet = [ "WithStockList",]
+[[tables.hook_tool_param.enums]]
+field = "pond_id"
+table = "fish_pond_list"
+
+[[tables.hook_tool_param.enums]]
+field = "bait_id"
+table = "item"
+
+í"(848c8b563ecd3b4cb21338f7f03de7ed9f7b25ab2Efile:///e:/DocsHDD/FGame/hookTool2-dl/hookTool/config-config.add.toml:.file:///e:/DocsHDD/FGame/hookTool2-dl/hookTool

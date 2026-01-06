@@ -1,0 +1,6 @@
+# Task: Troubleshooting uv Package Installation
+
+- [/] Investigate "System cannot open device or file" error <!-- id: 7 -->
+    - [ ] Clean uv cache <!-- id: 7.1 -->
+    - [ ] Attempt manual installation of cyclopts <!-- id: 7.2 -->
+    - [ ] Check for antivirus/locking issues <!-- id: 7.3 -->

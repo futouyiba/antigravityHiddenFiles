@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Implementation plan to provide the user with recovery steps for a \"stuck\" agent and to verify the status of the current LFS migration.",
+  "updatedAt":  "2025-12-24T16:15:21.975361400Z"
+}

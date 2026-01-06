@@ -1,0 +1,21 @@
+# Task: Fishing Planet Unity Game Analysis and Backend Implementation
+
+- [ ] Analyze Project Structure and Core Logic [/]
+    - [ ] Explore directory structure and locate key components
+    - [ ] Analyze Physics system (fishing line, water, etc.)
+    - [ ] Analyze Fish AI logic
+    - [ ] Document Player Loop and HUD (initial doc exists, need to expand)
+- [ ] Documentation and Knowledge Base
+    - [ ] Create detailed documentation in `documents` directory
+    - [ ] Implement/Suggest RAG/Attention mechanism for large project navigation
+- [ ] Backend Design and Implementation
+    - [ ] Evaluate technology stack (Photon, Orleans, etc.)
+    - [ ] Design backend architecture
+    - [ ] Implement backend server
+    - [ ] Connect Unity client to backend
+- [ ] Game Enhancements
+    - [ ] Identify areas for improvement
+    - [ ] Implement gameplay modifications
+- [ ] Verification and Testing
+    - [ ] Verify game runs with new backend
+    - [ ] Test game enhancements

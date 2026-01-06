@@ -1,0 +1,42 @@
+# Migrate away from GitHub LFS
+
+The goal is to stop using GitHub LFS to avoid storage costs while preserving all file content in the repository. Since your total LFS data is ~2GB and no individual files exceed GitHub's 100MB limit, we can safely migrate everything to regular Git.
+
+## User Review Required
+
+> [!IMPORTANT]
+> This process involves **rewriting your Git history**. 
+> 1. You will need to **force push** to GitHub, which will affect anyone else working on the repo.
+> 2. To completely stop GitHub from charging you, you may need to **delete and recreate the repository on GitHub** or contact their support to purge the LFS storage, as old LFS objects might persist in their backend even after a force push.
+
+> [!WARNING]
+> Please **make a full backup of your local project folder** before we start.
+
+## Proposed Changes
+
+We will use the building-in `git lfs migrate` tool to convert all LFS tracked files back into normal Git objects.
+
+### 1. Identify and Fetch All LFS Data
+Ensure all LFS objects are present locally before migration.
+- `git lfs fetch --all`
+
+### 2. Export LFS Objects to Regular Git
+Run the migration command for all branches.
+- `git lfs migrate export --everything --include="*"`
+
+### 3. Clean up .gitattributes
+Remove the LFS-specific lines from [.gitattributes](file:///e:/DocsHDD/EvolutionAndBetrayal/.gitattributes) so new files aren't tracked by LFS.
+
+### 4. Push to GitHub
+Force push the rewritten history to GitHub.
+- `git push --force --all`
+
+## Verification Plan
+
+### Automated Tests
+- Check if [.gitattributes](file:///e:/DocsHDD/EvolutionAndBetrayal/.gitattributes) still contains LFS filters.
+- Run `git lfs ls-files` to ensure it returns an empty list.
+
+### Manual Verification
+- Verify that Unreal Engine can still open the project and all assets (meshes, textures) are functional.
+- Check GitHub repository size and LFS usage (this may take some time to update on GitHub's side).

@@ -1,0 +1,8 @@
+- [x] Explain EnvTileExportCfg.cs logic <!-- id: 0 -->
+- [x] Debug Max Depth = 0 issue <!-- id: 1 -->
+    - [x] Analyze `QHTerrain.GetHeight` implementation <!-- id: 2 -->
+    - [x] Finding usage of `QHTerrain.Run` <!-- id: 3 -->
+    - [x] Modify `EnvTileExportCfg.cs` to ensure `QHTerrain` is initialized <!-- id: 4 -->
+- [x] Explain QHTag and Structure logic <!-- id: 5 -->
+    - [x] Analyze `QHSyncColliderTag.cs` definition <!-- id: 6 -->
+    - [x] Explain bitmask usage for tags and structures <!-- id: 7 -->

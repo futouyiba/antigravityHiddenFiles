@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Plan to migrate away from GitHub LFS by converting files to regular Git objects.",
+  "updatedAt":  "2025-12-24T16:05:27.950004700Z"
+}

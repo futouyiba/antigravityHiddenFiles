@@ -1,0 +1,22 @@
+# verification_summary
+
+I have successfully installed `uv` and added the `unity-mcp` package to your project.
+
+## Installed Components
+
+1.  **uv**: Installed via `winget`.
+    - **Note**: You may need to restart your terminal (or VS Code) for the `uv` command to be recognized in your path.
+2.  **unity-mcp**: Added `com.coplaydev.unity-mcp` to [Packages/manifest.json](file:///d:/fishinggame/Packages/manifest.json).
+
+## Verification Steps
+
+1.  **Verify uv**: Open a NEW PowerShell window and run:
+    ```powershell
+    uv --version
+    ```
+2.  **Verify Unity Package**: Open your Unity project. Unity will automatically resolve and download the new package. You should see `MCP for Unity` in the Package Manager.
+
+## Next Steps
+
+- Restart your Unity Editor to ensure the package loads correctly.
+- Follow the usage instructions in the [unity-mcp README](https://github.com/CoplayDev/unity-mcp/blob/main/README-zh.md).

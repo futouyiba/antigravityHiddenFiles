@@ -1,0 +1,11 @@
+- [x] 解释 EnvTileExportCfg.cs 逻辑
+- [x] 调试最大深度 = 0 的问题
+- [x] 解释 QHTag 和 Structure 逻辑
+- [x] 实现优化和新功能（Metadata、Bitmask 扩展、LocalStock）
+- [x] 优化 LocalStock 导出（Y步长解耦、COO 稀疏）
+- [x] 完善稀疏逻辑（严格裁剪、Global 稀疏）
+- [ ] 实现 Block Sparse 导出
+    - [ ] 重构 [SampleVoxelGrid](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#327-417) 以返回分块数据
+    - [ ] 实现 `ExportAsBlockSparse` 方法（输出 _Data.npy + _Index.npy）
+    - [ ] 更新 [MapLayerData](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#624-635) 元数据结构
+    - [ ] 测试验证

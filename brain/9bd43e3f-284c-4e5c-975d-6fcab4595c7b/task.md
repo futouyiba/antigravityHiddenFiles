@@ -1,8 +1,19 @@
-- [x] Explain EnvTileExportCfg.cs logic <!-- id: 0 -->
-- [x] Debug Max Depth = 0 issue <!-- id: 1 -->
-    - [x] Analyze `QHTerrain.GetHeight` implementation <!-- id: 2 -->
-    - [x] Finding usage of `QHTerrain.Run` <!-- id: 3 -->
-    - [x] Modify `EnvTileExportCfg.cs` to ensure `QHTerrain` is initialized <!-- id: 4 -->
-- [x] Explain QHTag and Structure logic <!-- id: 5 -->
-    - [x] Analyze `QHSyncColliderTag.cs` definition <!-- id: 6 -->
-    - [x] Explain bitmask usage for tags and structures <!-- id: 7 -->
+- [x] 解释 EnvTileExportCfg.cs 逻辑
+- [x] 调试最大深度 = 0 的问题
+- [x] 解释 QHTag 和 Structure 逻辑
+- [x] 实现优化和新功能（Metadata、Bitmask 扩展、LocalStock）
+- [x] 优化 LocalStock 导出（Y步长解耦、COO 稀疏）
+- [x] 完善稀疏逻辑（严格裁剪、Global 稀疏）
+- [x] 实现 Block Sparse 导出
+    - [x] 重构 `ExportAsBlockSparse` 方法
+    - [x] 输出 _Data.npy + _Index.npy 文件对
+    - [x] 更新 `MapLayerData` 元数据结构
+- [x] 编写导出数据文档
+    - [x] 确定 precompute 路径
+    - [x] 创建 `VoxelMapDataFormat.md`
+- [x] 转换需求文档
+    - [x] 转换 `中鱼-预计算+实时计算+校验方案 (1).pdf` 为 Markdown
+- [x] 实现多模式导出
+    - [x] 定义 `ExportMode` 枚举 (Dense, SparseCOO, BlockSparse)
+    - [x] 更新 `EnvTileExportCfg` 支持模式选择和时间戳文件夹
+    - [x] 重构导出逻辑适配三种模式

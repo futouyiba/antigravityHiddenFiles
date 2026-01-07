@@ -1,0 +1,19 @@
+# Walkthrough - TargetGDD Update
+
+I have updated [documents\TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md) to include research findings and new program trigger rules for bite perception optimization.
+
+## Changes
+
+### Documentation
+
+#### [TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md)
+- **Consolidated Content**: Copied all content from [documents\【预研】优化-中鱼后的迅速感知.md](file:///d:/workOnSsd/biteFX/documents/%E3%80%90%E9%A2%84%E7%A0%94%E3%80%91%E4%BC%98%E5%8C%96-%E4%B8%AD%E9%B1%BC%E5%90%8E%E7%9A%84%E8%BF%85%E9%80%9F%E6%84%9F%E7%9F%A5.md) into [TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md).
+- **New Section Added**: "4. 视觉/程序触发规则 (Program Trigger Rules)"
+    - Defined `FX_fish_bite_mood_linger`: Emotional mood linger effect (blue curve).
+    - Defined `FX_fish_bite_instant`: Tactile instant bite sensation.
+
+## Verification Results
+
+### Manual Check
+- Verified that [TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md) contains sections 1-3 from the source document.
+- Verified that section 4 correctly defines the two new FX rules as requested.

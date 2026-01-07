@@ -1,0 +1,15 @@
+- [x] 解释 EnvTileExportCfg.cs 逻辑
+- [x] 调试最大深度 = 0 的问题
+- [x] 解释 QHTag 和 Structure 逻辑
+- [x] 实现优化和新功能（Metadata、Bitmask 扩展、LocalStock）
+- [x] 优化 LocalStock 导出（Y步长解耦、COO 稀疏）
+- [x] 完善稀疏逻辑（严格裁剪、Global 稀疏）
+- [x] 实现 Block Sparse 导出
+    - [x] 重构 [ExportAsBlockSparse](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#250-350) 方法
+    - [x] 输出 _Data.npy + _Index.npy 文件对
+    - [x] 更新 [MapLayerData](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#564-578) 元数据结构
+- [x] 编写导出数据文档
+    - [x] 确定 precompute 路径
+    - [x] 创建 [VoxelMapDataFormat.md](file:///d:/fishinggame/precompute/VoxelMapDataFormat.md)
+- [x] 转换需求文档
+    - [x] 转换 `中鱼-预计算+实时计算+校验方案 (1).pdf` 为 Markdown

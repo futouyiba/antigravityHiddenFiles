@@ -1,0 +1,26 @@
+# Implementation Plan - Map to Stock Lookup
+
+## Goal
+Implement logic in [0precomputeDemo.ipynb](file:///d:/fishinggame/precompute/0precomputeDemo.ipynb) to look up available fish stocks based on the map ID.
+
+## User Review Required
+- None
+
+## Proposed Changes
+### Notebook Logic
+1.  Load [map_scene.json](file:///d:/fishinggame/precompute/data/1/1001/map_scene.json), [fish_pond_list.json](file:///d:/fishinggame/precompute/data/1/1001/fish_pond_list.json), and [fish_stock.json](file:///d:/fishinggame/precompute/data/1/1001/fish_stock.json).
+2.  Use [map_id](file:///d:/fishinggame/precompute/1PyPreDemo.py#37-42) (e.g., 1009) to find `map_scene` entry's `desc` field (e.g., 106).
+3.  Iterate through `fish_pond_list` to find all entries where `mapId` equals `desc`.
+4.  Collect `fishStockId` from matching pond entries.
+5.  Resolve stock IDs to detailed info using [fish_stock.json](file:///d:/fishinggame/precompute/data/1/1001/fish_stock.json).
+
+### Files to Modify
+- [d:\fishinggame\precompute\0precomputeDemo.ipynb](file:///d:/fishinggame/precompute/0precomputeDemo.ipynb)
+
+## Verification Plan
+### Automated Verification
+- Run the updated notebook cells via MCP.
+- Check if it correctly prints the stocks for `map_id=1009`.
+
+### Manual Verification
+- User runs the notebook.

@@ -1,0 +1,40 @@
+# Voxel Data Visualization Plan
+
+## Goal
+Visualize the voxel map data located at `D:\fishinggame\ExportedData\Fishing_1006001_Dense_20260107_154037\Fishing_1006001_Global.npy` with interactively and specific improvements.
+
+## User Review Required
+None.
+
+## Proposed Changes
+Modify `d:\fishinggame\precompute\PrecomputeVisualization.ipynb`:
+
+1.  **Data Analysis**:
+    - Count non-zero elements at `UnityY=0`, `UnityY=4`, `UnityY=5`.
+    - This helps confirm if Y=0 is bottom or surface.
+
+2.  **Interactive Visualization (Plotly)**:
+    - Use `plotly.graph_objects` to render the voxels.
+    - **Coordinate Mapping**:
+        - Plotly X <= Unity X (Axis 0)
+        - Plotly Y <= Unity Z (Axis 2)
+        - Plotly Z <= Unity Y (Axis 1) [Up]
+    - **Color Mapping**: Retain the previous logic but convert to hex strings for Plotly.
+    - **Aspect Ratio**:
+        - The data is approx `134 x 8 x 134`.
+        - Real aspect is 17:1.
+        - User wants ~3x visual scaling for the vertical axis (making it look thicker/deeper than reality, or perhaps just not as flat as 1:1 data, or not as stretched as auto-scale?).
+        - "Gap not that big... e.g. 3x".
+        - If I use `scene.aspectmode='manual'`, I'll set `x=1, y=1`.
+        - For `z`, if I want 1 vertical unit to visually equal ~3 horizontal units? Or just scale the whole axis to be 1/3 of the width?
+        - If I set `z=0.3`, the box height is 30% of width. Since data height (8) is ~6% of width (134), this stretches the height by ~5x. This fits "make it look like a lake" (easier to see depth layers).
+
+3.  **Optimization**:
+    - Scatter3d can be heavy. I will filter `val > 0`.
+    - I will check the count. If > 200k, I might display a subset or use `Scattergl` (if available in 3d? No, Scatter3d uses WebGL by default).
+
+## Verification Plan
+- Run the notebook.
+- Check the printed counts.
+- interact with the 3D plot (zoom, rotate).
+- Verify the vertical scaling looks "lake-like" (distinct layers visible).

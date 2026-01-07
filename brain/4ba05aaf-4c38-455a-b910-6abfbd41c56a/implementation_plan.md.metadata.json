@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Plan to implement map_id to stock_id lookup in precompute notebook by linking map_scene.desc to fish_pond_list.mapId.",
+  "updatedAt":  "2026-01-07T09:03:51.709497300Z"
+}

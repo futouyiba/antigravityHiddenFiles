@@ -1,0 +1,18 @@
+# Implementation Plan - Update TargetGDD
+
+Update [documents\TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md) to consolidate research findings and define new program trigger rules.
+
+## Proposed Changes
+
+### Documentation
+
+#### [NEW] [TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md)
+- **Copy Content**: Initialize with content from [documents\【预研】优化-中鱼后的迅速感知.md](file:///d:/workOnSsd/biteFX/documents/%E3%80%90%E9%A2%84%E7%A0%94%E3%80%91%E4%BC%98%E5%8C%96-%E4%B8%AD%E9%B1%BC%E5%90%8E%E7%9A%84%E8%BF%85%E9%80%9F%E6%84%9F%E7%9F%A5.md).
+- **Add Section**: "4. 视觉/程序触发规则 (Program Trigger Rules)"
+    - Define `FX_fish_bite_mood_linger`: Represents player emotion/arousal (Mood Linger). Reference blue curve in `瞬间感知FX-程序驱动思路-板报.jpg`.
+    - Define `FX_fish_bite_instant`: Represents tactile bite sensation (Instant).
+
+## Verification Plan
+
+### Manual Verification
+- [ ] User to review the generated [TargetGDD.md](file:///d:/workOnSsd/biteFX/documents/TargetGDD.md) to ensure it captures the requirements correctly.

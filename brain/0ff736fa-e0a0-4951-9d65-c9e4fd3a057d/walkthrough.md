@@ -1,0 +1,44 @@
+# Visualize Voxel Data Walkthrough
+
+## Completed Work
+I have successfully visualized the voxel map `.npy` file.
+
+1.  **Loaded Data**: Loaded `Fishing_1006001_Global.npy` which contained dense voxel data of shape `(134, 8, 134)`.
+2.  **Color Mapping**: Implemented a bitmask-to-color mapping based on `VoxelMapDataFormat.md`.
+    - Water: Blue
+    - Water Grass: LimeGreen
+    - Stone: Gray
+    - Deep Pit: DarkBlue
+    - etc.
+3.  **Visualization**: Created a 3D Voxel Plot.
+    - Swapped axes to align with Unity Global Coordinates:
+        - Plot X = Unity X (Right)
+        - Plot Y = Unity Z (Forward)
+        - Plot Z = Unity Y (Up)
+    - Rendered the map successfully.
+
+## Visualization Result
+The visualization shows the water body with various features like grass areas (green), deep pits (dark blue), and structure (gray/brown).
+
+*(Note: The visualization was displayed in the Jupyter Notebook)*
+
+## Refined Interactive Visualization (Plotly)
+Updated the notebook to include an interactive 3D plot using Plotly:
+1.  **Analysis**: Confirmed Y-axis data distribution (Y=5 has ~2231 points vs Y=0 has ~314 points), suggesting higher Y indices likely represent upper layers/surface.
+2.  **Interaction**: Enabled zoom, pan, and rotation.
+3.  **Visuals**:
+    - Mapped Unity coordinates to Plotly (X->X, Z->Y, Y->Z) for intuitive top-down/side views.
+    - Set aspect ratio `z=0.3` relative to x/y=1.0 to give a realistic "lake" appearance (not too flat, not too tall).
+    - Preserved bitmask color mappings.
+
+## Data Analysis Insights
+-   **Y-Axis Distribution**: 
+    -   Voxel count increases from Y=0 (314) to Y=6 (3257), then drops at Y=7 (1214).
+    -   **Interpretation**: The lake widens upwards. Y=6 is likely the main water surface. Y=7 contains objects protruding above water (Driftwood, Stone) but no Water flag.
+-   **Bitmask Complexity**:
+    -   ~38% of voxels have multiple flags.
+    -   Common combinations: `STONE | GRAVEL`, `WATER | DRIFTWOOD | MUD`.
+    -   **Collision Handling**: The current color priority (Physical Object > Vegetation > Material > Logical) handles these well (e.g., coloring `STONE | GRAVEL` as Stone).
+
+## Next Steps
+The notebook `d:\fishinggame\precompute\PrecomputeVisualization.ipynb` is ready for further use or modification.

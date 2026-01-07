@@ -1,0 +1,16 @@
+# Data Lookup Implementation Plan
+
+## Goal Description
+Implement data lookup logic in [0precomputeDemo.ipynb](file:///d:/fishinggame/precompute/0precomputeDemo.ipynb) to assemble fish configuration data into numpy arrays/pandas DataFrames for downstream calculation. 
+
+## Proposed Changes
+### Notebook: [0precomputeDemo.ipynb](file:///d:/fishinggame/precompute/0precomputeDemo.ipynb)
+- [ ] Load `fish_stock.json` (and other related configs if needed)
+- [ ] Implement lookup: Stock ID -> Release ID
+- [ ] Implement lookup: Release ID -> Fish Configs (quality, weight range, len range, etc.)
+- [ ] Create `stockFishesPd` DataFrame
+- [ ] Enrich with Fish Species and Env Affinity based on Quality ID
+
+## Verification Plan
+### Automated Tests
+- Run the notebook cells and verify the output `stockFishesPd` contains expected columns and data types.

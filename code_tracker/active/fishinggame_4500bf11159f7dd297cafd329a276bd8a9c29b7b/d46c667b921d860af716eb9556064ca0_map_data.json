@@ -1,0 +1,126 @@
+º{
+    "mapID": 1006001,
+    "timestamp": "2026-01-07 12:26:12",
+    "global": {
+        "name": "Global",
+        "type": "Global",
+        "format": "block_sparse",
+        "blockSize": 16,
+        "dataFile": "Fishing_1006001_Global_Data.npy",
+        "indexFile": "Fishing_1006001_Global_Index.npy",
+        "blockCount": 44,
+        "origin": [
+            12.599998474121094,
+            -6.816898345947266,
+            -147.3000030517578
+        ],
+        "step": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "dim": [
+            200,
+            8,
+            200
+        ]
+    },
+    "locals": [
+        {
+            "name": "stock_sunset_zone_t4",
+            "type": "LocalStock",
+            "format": "block_sparse",
+            "blockSize": 16,
+            "dataFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (3)_-2166_Data.npy",
+            "indexFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (3)_-2166_Index.npy",
+            "blockCount": 6,
+            "origin": [
+                79.24942779541016,
+                -5.382899284362793,
+                -92.52035522460938
+            ],
+            "step": [
+                0.5,
+                1.0,
+                0.5
+            ],
+            "dim": [
+                17,
+                6,
+                33
+            ]
+        },
+        {
+            "name": "stock_sunset_zone_t4",
+            "type": "LocalStock",
+            "format": "block_sparse",
+            "blockSize": 16,
+            "dataFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (2)_-2156_Data.npy",
+            "indexFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (2)_-2156_Index.npy",
+            "blockCount": 9,
+            "origin": [
+                58.20930480957031,
+                -4.657954216003418,
+                -94.22565460205078
+            ],
+            "step": [
+                0.5,
+                1.0,
+                0.5
+            ],
+            "dim": [
+                47,
+                5,
+                37
+            ]
+        },
+        {
+            "name": "stock_sunset_zone_t4",
+            "type": "LocalStock",
+            "format": "block_sparse",
+            "blockSize": 16,
+            "dataFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (1)_-2146_Data.npy",
+            "indexFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4 (1)_-2146_Index.npy",
+            "blockCount": 9,
+            "origin": [
+                163.55039978027345,
+                -4.432387351989746,
+                -35.378543853759769
+            ],
+            "step": [
+                0.5,
+                1.0,
+                0.5
+            ],
+            "dim": [
+                34,
+                5,
+                41
+            ]
+        },
+        {
+            "name": "stock_sunset_zone_t4",
+            "type": "LocalStock",
+            "format": "block_sparse",
+            "blockSize": 16,
+            "dataFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4_-2136_Data.npy",
+            "indexFile": "Fishing_1006001_LocalStock_stock_sunset_zone_t4_-2136_Index.npy",
+            "blockCount": 14,
+            "origin": [
+                159.337890625,
+                -4.519784927368164,
+                -57.64599609375
+            ],
+            "step": [
+                0.5,
+                1.0,
+                0.5
+            ],
+            "dim": [
+                49,
+                5,
+                61
+            ]
+        }
+    ]
+}º"(4500bf11159f7dd297cafd329a276bd8a9c29b7b2Afile:///d:/fishinggame/ExportedData/Fishing_1006001/map_data.json:file:///d:/fishinggame

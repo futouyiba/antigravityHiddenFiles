@@ -1,0 +1,27 @@
+# Block Sparse 导出实现
+
+## 目标
+将体素数据导出格式从 COO Sparse 升级为 Block Sparse，以优化 25%-60% 水域占比场景下的存储效率。
+
+## 设计
+- **Block Size**: 16 (可配置)
+- **输出文件**:
+  - `LayerName_Data.npy`: `int32[N, 16, 16, 16]` —— N 个非空 Block 的体素数据
+  - `LayerName_Index.npy`: `int32[N, 3]` —— N 个 Block 的网格坐标 [(bx, by, bz)](file:///d:/fishinggame/Assets/World/Scripts/BusinessModule/Terrain/QHTerrain.cs#59-100)
+- **Metadata 新增字段**:
+  - `format`: `"block_sparse"`
+  - `block_size`: `16`
+  - `data_file`, `index_file`: 分别指向两个 npy 文件
+
+## 修改文件
+
+### [EnvTileExportCfg.cs](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs)
+
+1. 新增配置项 `blockSize = 16`
+2. 新增 `ExportAsBlockSparse(int[,,] data, string basePath)` 方法
+3. 修改 Global 和 LocalStock 导出逻辑调用新方法
+4. 更新 [MapLayerData](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#624-635) 结构
+
+## 验证
+- 运行导出，检查生成的 `_Data.npy` 和 `_Index.npy` 文件
+- 验证 `map_data.json` 中 `format` 和 `block_size` 字段

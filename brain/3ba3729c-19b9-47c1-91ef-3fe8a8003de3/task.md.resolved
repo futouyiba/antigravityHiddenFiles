@@ -1,0 +1,4 @@
+- [x] Convert PDFs to Markdown <!-- id: 0 -->
+    - [x] Create Python script for conversion <!-- id: 1 -->
+    - [x] Run conversion script <!-- id: 2 -->
+    - [x] Verify and refine output <!-- id: 3 -->

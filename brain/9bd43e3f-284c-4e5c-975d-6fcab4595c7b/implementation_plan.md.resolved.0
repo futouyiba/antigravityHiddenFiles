@@ -1,0 +1,41 @@
+# Optimization: Local Stock Sparse Export & Step Adjustment
+
+## Goal
+Optimize the export of "Local Stock" data to reduce file size and improve efficiency for rotated regions. This addresses the user's report of large file sizes due to "empty space" in World AABBs.
+
+## Proposed Changes
+
+### [EnvTileExportCfg.cs](d:\fishinggame\Assets\EditorTools\Editor\EnvTileExportCfg.cs)
+
+1.  **Modify [EnvTileExportCfgPerMap](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#544-565)**:
+    *   Rename `localStockStep` to `localStockStepXZ` to clarify it only affects horizontal resolution.
+    *   (Internal Logic Change): For Local Sampling, use `samplingStep.y` (Global Y Step) for the Y-axis.
+
+2.  **Add Sparse Support**:
+    *   Add a checkbox `exportSparse` to [EnvTileExportCfgPerMap](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#544-565) (default `true`).
+    *   Update [MapLayerData](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#576-586) struct to include a `format` field (`"dense"` or `"sparse_coo"`).
+
+3.  **Refactor [ExportVoxelData](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#134-305)**:
+    *   Pass `localStockStepXZ` and `samplingStep.y` to [SampleVoxelGrid](file:///d:/fishinggame/Assets/EditorTools/Editor/EnvTileExportCfg.cs#308-400).
+    *   Add `ExportVoxelDataAsSparseNumpy` method:
+        *   Iterates through the voxel grid.
+        *   Collects [(x, y, z, val)](file:///d:/fishinggame/Assets/World/Scripts/BusinessModule/Terrain/QHTerrain.cs#59-100) quaternions for non-zero voxels.
+        *   Flattens and exports as a 1D or 2D array in `.npy`.
+        *   **Format**: `N * 4` int32 array.
+
+## Verification Plan
+
+### Manual Verification
+1.  **Configure**:
+    *   Set `localStockStepXZ` to `0.5` (or finer).
+    *   Set `samplingStep` (Global) to [(1, 1, 1)](file:///d:/fishinggame/Assets/World/Scripts/BusinessModule/Terrain/QHTerrain.cs#59-100).
+    *   Ensure a `LocalStock` object exists and is rotated (e.g., 45 degrees).
+2.  **Run Export**: Click "采样导出".
+3.  **Check Output**:
+    *   Verify `_Global.npy` exists.
+    *   Verify `_LocalStock_xxx.npy` exists and size is significantly smaller than before.
+    *   Verify `map_data.json` contains `"format": "sparse_coo"` for the local stock layer.
+    *   Verify `map_data.json` coordinates/steps are correct (`step` array should match the mixed steps).
+
+### Automated Tests
+*   N/A (This is an Editor tool relying on Scene state, hard to unit test without scene setup).

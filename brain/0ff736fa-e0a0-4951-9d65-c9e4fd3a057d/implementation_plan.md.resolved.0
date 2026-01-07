@@ -1,0 +1,32 @@
+# Voxel Data Visualization Plan
+
+## Goal
+Visualize the voxel map data located at `D:\fishinggame\ExportedData\Fishing_1006001_Dense_20260107_154037\Fishing_1006001_Global.npy`.
+
+## User Review Required
+None at this stage.
+
+## Proposed Changes
+I will create a new Jupyter Notebook `PrecomputeVisualization.ipynb` in `d:\fishinggame\precompute\` to:
+
+1.  **Inspect Data**:
+    - Load the `.npy` file.
+    - Check its shape and data type.
+    - Determine if it is a dense array `[X, Y, Z]` or a sparse data block `[N, 16, 16, 16]`.
+    - If sparse, look for the corresponding index file in the same directory.
+
+2.  **Define Color Mapping**:
+    - Map bitmask values to colors based on [VoxelMapDataFormat.md](file:///d:/fishinggame/precompute/VoxelMapDataFormat.md).
+    - `FLAG_WATER` (Bit 0): Base Blue.
+    - `FLAG_WATER_GRASS` (Bit 1): Green.
+    - `FLAG_STONE` (Bit 2): Gray.
+    - ...and other flags.
+
+3.  **Visualization Logic**:
+    - Use `matplotlib` (or `plotly` if available) to create a 3D voxel plot.
+    - Ensure coordinate system: Y-up, X-right, Z-forward.
+    - Slice the data if it's too large to render fully (3D scatter plots can be heavy).
+    
+## Verification Plan
+- **Run the notebook**: Execute the cells to produce the visualization.
+- **Visual Check**: Confirm the visualization looks like a map (water, structures) and colors match the expected bitmask flags.

@@ -105,4 +105,4 @@ public class QHSyncColliderTag : MonoBehaviour
             Debug.LogError($"[QHSyncColliderTag] 位置 ={pos} 命中了 {AreaType}");
         }
     }
-}�"(7799193779ce0b657e1ba9b0027d5ebb9563c9492gfile:///d:/fishinggame/Assets/Plugins/RenderingSystem/VegetationSystem/Runtime/Tag/QHSyncColliderTag.cs:file:///d:/fishinggame
+}�"(4500bf11159f7dd297cafd329a276bd8a9c29b7b2gfile:///d:/fishinggame/Assets/Plugins/RenderingSystem/VegetationSystem/Runtime/Tag/QHSyncColliderTag.cs:file:///d:/fishinggame
